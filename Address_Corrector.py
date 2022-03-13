@@ -1,6 +1,7 @@
 import re
 from titlecase import titlecase
 import webbrowser
+import pyclip
 while True:
     out = input("Please enter a Sentence:\n")
 
@@ -23,8 +24,13 @@ while True:
 
     # print new sentence
     print('New sentence is:\n',out_tle)
+    
+    # sent the result to your clipboard
+    pyclip.copy(out_tle)
 
     # automatically open google search in broswer and search the address to find out if the address is spelled correctly
+    ## Replace symbol "&" with "%26", so Google could handle it
+    out_tle = out_tle.replace("&","%26")
     url = "https://www.google.com.tr/search?q={}".format(out_tle)
     webbrowser.open_new_tab(url)
 

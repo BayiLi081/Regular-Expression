@@ -4,4 +4,6 @@
 
    Output String: "50 Quen Road, Reading"
 
+   And the output would be directly sent to the clipboard
+   
    ![plot](./images/Address_Corrector_01.jpg)
